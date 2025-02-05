@@ -1,177 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RockPaperScissors</title>
-    </head>
-  <body>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="./Assets/images/avatar.png" sizes="32x32" type="image/png">
+</head>
+<body>
     <div class="main-container d-flex flex-column" id="mainContainer">
-      <div
-        class="scores-and-title-container d-flex flex-row justify-content-between row"
-        id="scoreCard"
-      >
-        <img class="logo" src="./Assets/images/logo.svg" alt="" />
-        <div
-          class="score-container d-flex flex-column justify-content-center col-4 col-md-2"
-        >
-          <p class="score-title text-center">SCORE</p>
-          <h1 class="score text-center" id="score"></h1>
-        </div>
-      </div>
-      <div
-        class="main-content d-flex flex-column justify-content-between"
-        id="mainContent"
-      >
-        <div
-          class="images-to-choose-container d-flex flex-row"
-          id="toChooseWindow"
-        >
-          <div class="top-2-images d-flex flex-row">
-            <div
-              class="image-container paper-image-container d-flex flex-column justify-content-center"
-              id="paper"
-            >
-              <img class="image" src="./Assets/images/icon-paper.svg" alt="" />
+        <!-- Header -->
+        <header class="scores-and-title-container d-flex flex-row justify-content-between row">
+            <img class="logo" src="./Assets/images/logo.svg" alt="Rock Paper Scissors Logo">
+            <div class="score-container d-flex flex-column justify-content-center col-4 col-md-2">
+                <p class="score-title text-center">SCORE</p>
+                <h1 class="score text-center" id="score"></h1>
             </div>
-            <div
-              class="image-container scissors-image-container d-flex flex-column justify-content-center"
-              id="scissor"
-            >
-              <img class="image" src="./Assets/images/icon-scissors.svg" alt="" />
-            </div>
-          </div>
-          <div
-            class="image-container rock-image-container d-flex flex-column justify-content-center"
-            id="rock"
-          >
-            <img class="image" src="./Assets/images/icon-rock.svg" alt="" />
-          </div>
-        </div>
+        </header>
 
-        <div
-          class="house-loading-choice-container d-flex flex-row d-none"
-          id="loadingWindow"
-        >
-          <div class="my-loading-choice-container d-flex flex-column">
-            <div
-              class="image-container my-choice-md-devices my-choice-container paper-image-container d-flex flex-column justify-content-center"
-              id="myLoadingChoice"
-            >
-              <img
-                id="myLoadingChoiceImage"
-                class="image"
-                src="./Assets/images/icon-paper.svg"
-                alt=""
-              />
+        <main class="main-content d-flex flex-column justify-content-between">
+            <!-- Choice Selection Window -->
+            <div class="images-to-choose-container d-flex flex-row" id="toChooseWindow">
+                <div class="top-2-images d-flex flex-row">
+                    <div class="image-container paper-image-container d-flex flex-column justify-content-center" id="paper">
+                        <img class="image" src="./Assets/images/icon-paper.svg" alt="Paper">
+                    </div>
+                    <div class="image-container scissors-image-container d-flex flex-column justify-content-center" id="scissor">
+                        <img class="image" src="./Assets/images/icon-scissors.svg" alt="Scissors">
+                    </div>
+                </div>
+                <div class="image-container rock-image-container d-flex flex-column justify-content-center" id="rock">
+                    <img class="image" src="./Assets/images/icon-rock.svg" alt="Rock">
+                </div>
             </div>
-            <h1 class="picked-heading">YOU PICKED</h1>
-          </div>
-          <div
-            class="house-choice-container d-flex flex-column justify-content-center"
-          >
-            <div
-              class="house-picking-choice-container d-flex flex-column justify-content-center"
-            ></div>
-            <h1 class="house-picking-choice-heading">HOUSE PICKED</h1>
-          </div>
-        </div>
 
-        <div
-          class="house-picked-choice-container d-flex flex-row d-none"
-          id="loadedChoiceWindow"
-        >
-          <div class="d-flex flex-column">
-            <div
-              class="image-container my-choice-md-devices my-choice-container paper-image-container d-flex flex-column justify-content-center"
-              id="myLoadedChoice"
-            >
-              <img
-                id="myLoadedChoiceImage"
-                class="image"
-                src="./Assets/images/icon-paper.svg"
-                alt=""
-              />
-            </div>
-            <h1 class="picked-heading">YOU PICKED</h1>
-          </div>
-          <div class="house-choice-container d-flex flex-column">
-            <div
-              class="image-container my-choice-md-devices my-choice-container paper-image-container d-flex flex-column justify-content-center"
-              id="houseChoice"
-            >
-              <img
-                id="houseChoiceImage"
-                class="image"
-                src="./Assets/images/icon-paper.svg"
-                alt=""
-              />
-            </div>
-            <h1 class="picked-heading">HOUSE PICKED</h1>
-          </div>
-        </div>
+            <!-- Game States (Hidden by default) -->
+            <div class="game-states">
+                <!-- Loading State -->
+                <div class="choice-container d-flex flex-row d-none" id="loadingWindow">
+                    <div class="player-choice d-flex flex-column">
+                        <div class="image-container my-choice-md-devices paper-image-container d-flex flex-column justify-content-center" id="myLoadingChoice">
+                            <img id="myLoadingChoiceImage" class="image" src="./Assets/images/icon-paper.svg" alt="">
+                        </div>
+                        <h1 class="picked-heading">YOU PICKED</h1>
+                    </div>
+                    <div class="house-choice-container d-flex flex-column justify-content-center">
+                        <div class="house-picking-choice-container"></div>
+                        <h1 class="house-picking-choice-heading">HOUSE PICKED</h1>
+                    </div>
+                </div>
 
-        <div
-          class="result-container d-flex flex-column d-none"
-          id="resultWindow"
-        >
-          <div class="result-choice-container d-flex flex-row">
-            <div class="result--image-and-heading d-flex flex-column">
-              <div
-                class="image-container my-choice-md-devices my-result-choice-container paper-image-container d-flex flex-column justify-content-center"
-                id="myResultChoice"
-              >
-                <img
-                  id="myResultChoiceImage"
-                  class="image"
-                  src="/Assets/images/icon-paper.svg"
-                  alt=""
-                />
-              </div>
-              <h1 class="picked-heading">YOU PICKED</h1>
-            </div>
-            <div class="result-display-md-devices d-none d-md-block">
-              <h1 class="result" id="result">YOU WIN</h1>
-              <button class="btn play-again-button" id="playAgainButtonMd">
-                Play Again
-              </button>
-            </div>
-            <div class="result--image-and-heading d-flex flex-column">
-              <div
-                class="image-container my-choice-md-devices my-choice-container paper-image-container d-flex flex-column justify-content-center"
-                id="houseResultChoice"
-              >
-                <img
-                  id="houseResultChoiceImage"
-                  class="image"
-                  src="./Assets/images/icon-paper.svg"
-                  alt=""
-                />
-              </div>
-              <h1 class="picked-heading">HOUSE PICKED</h1>
-            </div>
-          </div>
-          <div class="result-display d-md-none">
-            <h1 class="result" id="result">YOU WIN</h1>
-            <button class="btn play-again-button" id="playAgainButton">
-              Play Again
-            </button>
-          </div>
-        </div>
+                <!-- Loaded State -->
+                <div class="choice-container d-flex flex-row d-none" id="loadedChoiceWindow">
+                    <div class="player-choice d-flex flex-column">
+                        <div class="image-container my-choice-md-devices paper-image-container d-flex flex-column justify-content-center" id="myLoadedChoice">
+                            <img id="myLoadedChoiceImage" class="image" src="./Assets/images/icon-paper.svg" alt="">
+                        </div>
+                        <h1 class="picked-heading">YOU PICKED</h1>
+                    </div>
+                    <div class="player-choice d-flex flex-column">
+                        <div class="image-container my-choice-md-devices paper-image-container d-flex flex-column justify-content-center" id="houseChoice">
+                            <img id="houseChoiceImage" class="image" src="./Assets/images/icon-paper.svg" alt="">
+                        </div>
+                        <h1 class="picked-heading">HOUSE PICKED</h1>
+                    </div>
+                </div>
 
-        <div class="buttons-container d-flex">
-          <button class="btn reset-button" id="resetButton">New Game</button>
-          <button class="btn rules-button" id="rulesButton">Rules</button>
-        </div>
-      </div>
+                <!-- Result State -->
+                <div class="result-container d-flex flex-column d-none" id="resultWindow">
+                    <div class="result-choice-container d-flex flex-row">
+                        <div class="player-choice d-flex flex-column">
+                            <div class="image-container my-choice-md-devices paper-image-container d-flex flex-column justify-content-center" id="myResultChoice">
+                                <img id="myResultChoiceImage" class="image" src="/Assets/images/icon-paper.svg" alt="">
+                            </div>
+                            <h1 class="picked-heading">YOU PICKED</h1>
+                        </div>
+                        <div class="result-display-md-devices d-none d-md-block">
+                            <h1 class="result" id="result">YOU WIN</h1>
+                            <button class="btn play-again-button" id="playAgainButtonMd">Play Again</button>
+                        </div>
+                        <div class="player-choice d-flex flex-column">
+                            <div class="image-container my-choice-md-devices paper-image-container d-flex flex-column justify-content-center" id="houseResultChoice">
+                                <img id="houseResultChoiceImage" class="image" src="./Assets/images/icon-paper.svg" alt="">
+                            </div>
+                            <h1 class="picked-heading">HOUSE PICKED</h1>
+                        </div>
+                    </div>
+                    <div class="result-display d-md-none">
+                        <h1 class="result" id="result">YOU WIN</h1>
+                        <button class="btn play-again-button" id="playAgainButton">Play Again</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="buttons-container d-flex">
+                <button class="btn reset-button" id="resetButton">New Game</button>
+                <button class="btn rules-button" id="rulesButton">Rules</button>
+            </div>
+        </main>
     </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="https://github.com/chrisaidan96">Christopher Aidan</a>.
-    </div>
-    </body>
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/chrisaidan96" target="_blank">Christopher Aidan</a>.
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
 </html>
