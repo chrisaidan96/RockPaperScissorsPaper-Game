@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+body {
+  margin: 0px;
+  background-color: #021a3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.rules-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 40px;
+  color: #ffffff;
+}
+
+.rules-image {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 280px;
+  align-self: center;
+}
+
+.rules-heading {
+  font-family: "Roboto Condensed";
+  font-size: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #021a3d;
+}
+
+.cross-button {
+  text-align: center;
+  font-size: 30px;
+  margin-top: auto;
+  color: rgb(172, 172, 172);
+}
+
+.rules-md-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-height: 100%;
+  width: 100%;
+  background-color: rgb(1, 14, 34, 0.8);
+}
+
+.rules-md-main-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 400px;
+  padding: 40px;
+}
+
+.rules-heading-close-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cross-button-md {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(172, 172, 172);
+}
+
+.rules-heading-md {
+  font-family: "Roboto Condensed";
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #021a3d;
+}
+
+.rules-md-image {
+  width: 260px;
+  align-self: center;
+  margin-top: 40px;
+}
+
+.main-container {
+  background-color: #021a3d;
+  background-size: cover;
+  height: 100vh;
+  padding: 40px;
+}
+
+.scores-and-title-container {
+  border: 3px solid rgb(255, 255, 255, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+  align-self: center;
+}
+
+.score-container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.score-title {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  margin: 0px;
+  font-size: 12px;
+  color: #021a3d;
+}
+
+.score {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  letter-spacing: 0px;
+  margin: 0px;
+  font-size: 35px;
+  color: #36383b;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.background-triangle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  align-self: center;
+}
+
+.images-to-choose-container {
+  background-image: url(/Assets/images/bg-triangle.png);
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-position: center;
+  flex-wrap: wrap;
+  width: 260px;
+  padding: 10px;
+  align-self: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.image-container {
+  height: 100px;
+  width: 100px;
+  border-radius: 1500px;
+  margin: 10px;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.paper-image-container {
+  border: 12px solid #0667d6;
+  box-shadow: inset 0px 3px 0px 0px #cbc8c8, 0px 3px 0px 0px blue;
+}
+
+.scissors-image-container {
+  border: 12px solid #f5c116;
+  box-shadow: inset 0px 3px 0px 0px #cbc8c8, 0px 3px 0px 0px #ba9004;
+}
+
+.rock-image-container {
+  border: 12px solid #ed0937;
+  box-shadow: inset 0px 3px 0px 0px #cbc8c8, 0px 3px 0px 0px #990825;
+}
+
+.image {
+  width: 30px;
+  height: 40px;
+}
+
+.buttons-container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.reset-button {
+  border: 2px solid rgb(255, 255, 255, 0.4);
+  font-family: "Roboto Condensed";
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 130px;
+  align-self: center;
+  border-radius: 10px;
+}
+
+.rules-button {
+  border: 2px solid rgb(255, 255, 255, 0.4);
+  font-family: "Roboto Condensed";
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: 100px;
+  align-self: center;
+  margin-top: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
