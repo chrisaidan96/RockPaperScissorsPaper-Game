@@ -98,3 +98,66 @@ function playGame(playerChoice) {
     }, 500);
 }
 
+function updateGameUI(playerChoice, stage, houseChoice = null, result = null) {
+    const windows = elements.windows;
+    const getImagePath = (choice) => `assets/images/icon-${choice}.svg`;
+    
+    Object.values(windows).forEach(window => window.classList.add('d-none'));
+    windows[stage].classList.remove('d-none');
+    
+    if (stage === 'loading') {
+        setChoiceUI('myLoadingChoice', playerChoice);
+    } else if (stage === 'loaded') {
+        setChoiceUI('myLoadedChoice', playerChoice);
+        setChoiceUI('houseChoice', houseChoice);
+    } else if (stage === 'result') {
+        // Reset all special effect classes
+        const resultElements = ['myResultChoice', 'houseResultChoice'].map(id => 
+            document.getElementById(id).parentElement
+        );
+        resultElements.forEach(el => {
+            el.classList.remove('winner-effect-1', 'winner-effect-2', 'winner-effect-3');
+        });
+
+        setChoiceUI('myResultChoice', playerChoice);
+        setChoiceUI('houseResultChoice', houseChoice);
+        document.getElementById('result').textContent = result;
+        elements.playAgain.mobile.style.color = result === 'You Lose' ? '#ed0937' : '#021a3d';
+
+        // Add winner effects
+        if (result !== 'Draw') {
+            const winnerElement = result === 'You Win' ? 
+                document.getElementById('myResultChoice').parentElement :
+                document.getElementById('houseResultChoice').parentElement;
+            
+            winnerElement.classList.add('winner-effect-1', 'winner-effect-2', 'winner-effect-3');
+        }
+    }
+}
+
+function setChoiceUI(elementId, choice) {
+    const element = document.getElementById(elementId);
+    const imageElement = document.getElementById(`${elementId}Image`);
+    
+    // Remove all possible choice classes first
+    element.classList.remove('paper-image-container', 'scissors-image-container', 'rock-image-container');
+    element.classList.add(`${choice}-image-container`);
+    imageElement.src = `assets/images/icon-${choice}.svg`;
+}
+
+function getGameResult(playerChoice, houseChoice) {
+    if (playerChoice === houseChoice) return 'Draw';
+    return outcomes[playerChoice].beats === houseChoice ? 'You Win' : 'You Lose';
+}
+
+// Event listeners
+Object.entries(elements.choices).forEach(([choice, element]) => {
+    element.addEventListener('click', () => playGame(choice));
+});
+
+Object.values(elements.playAgain).forEach(button => {
+    button.onclick = () => {
+        elements.windows.result.classList.add('d-none');
+        elements.windows.choose.classList.remove('d-none');
+    };
+});
