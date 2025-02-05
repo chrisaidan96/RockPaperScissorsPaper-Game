@@ -217,3 +217,261 @@ body {
   margin-bottom: 30px;
 }
 
+.house-loading-choice-container {
+  flex-wrap: wrap;
+  width: 130%;
+  padding: 0px;
+  align-self: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.picked-heading {
+  color: #ffffff;
+  font-family: "Roboto Condensed";
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  align-self: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.my-choice-container {
+  margin-right: 0px;
+}
+
+.house-choice-container {
+  margin-left: 20px;
+}
+
+.house-picking-choice-container {
+  height: 90px;
+  width: 90px;
+  background-color: #021532;
+  margin-top: 15px;
+  margin-left: 15px;
+  border-radius: 1000px;
+  padding: 0px;
+}
+
+.house-picking-choice-heading {
+  color: #ffffff;
+  font-family: "Roboto Condensed";
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  align-self: center;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.house-picked-choice-container {
+  flex-wrap: wrap;
+  width: 130%;
+  padding: 0px;
+  align-self: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.result-container {
+  height: 100%;
+}
+
+.result-choice-container {
+  flex-wrap: wrap;
+  width: 130%;
+  padding: 0px;
+  align-self: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.result--image-and-heading {
+  margin: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.result-display {
+  align-self: center;
+  margin-top: 10px;
+}
+
+.result {
+  font-family: "Roboto Condensed";
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.play-again-button {
+  background-color: #ffffff;
+  color: #021a3d;
+  width: 150px;
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+img {
+  transition: transform 0.1s;
+}
+img:hover {
+  transform: scale(1.1);
+}
+.attribution {
+  margin-top: 8px;
+  font-size: 11px;
+  text-align: center;
+  color: hsl(68, 65%, 51%);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* media query */
+
+@media all and (min-width: 768px) {
+  .logo {
+    width: 140px;
+    height: 70px;
+  }
+ 
+  .scores-and-title-container {
+    width: 55%;
+    align-self: center;
+    border-radius: 15px;
+  }
+
+  .score-container {
+    box-shadow: 3px 5px 3px hsl(218, 87%, 9%);
+  }
+
+  .image-container {
+    height: 150px;
+    width: 150px;
+  }
+
+  .image {
+    height: 60px;
+    width: 50px;
+  }
+
+  .paper-image-container {
+    border: 17px solid #0667d6;
+    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px blue;
+  }
+
+  .scissors-image-container {
+    border: 17px solid #f5c116;
+    margin-left: 50px;
+    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px #ba9004;
+  }
+
+  .rock-image-container {
+    border: 17px solid #ed0937;
+    margin-top: 20px;
+    box-shadow: inset 0px 5px 0px 0px #cbc8c8, 0px 5px 0px 0px #990825;
+  }
+
+  .images-to-choose-container {
+    background-size: 230px 230px;
+  }
+
+  .rules-button {
+    align-self: flex-end;
+    margin-top: 15px;
+  }
+
+  .my-loading-choice-container {
+    margin-right: 80px;
+  }
+
+  .picked-heading {
+    order: -1;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .house-choice-container {
+    align-self: center;
+    margin-left: 80px;
+  }
+
+  .house-loading-choice-container {
+    width: 100%;
+  }
+
+  .house-picked-choice-container {
+    width: 100%;
+  }
+
+  .house-picking-choice-container {
+    height: 180px;
+    width: 180px;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .house-picking-choice-heading {
+    order: -1;
+    margin-top: 0px;
+    font-size: 16px;
+  }
+
+  .my-choice-md-devices {
+    border-width: 24px;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .result-choice-container {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .result-display-md-devices {
+    margin-left: 30px;
+    margin-right: 30px;
+    align-self: center;
+    padding-top: 80px;
+  }
+
+  .result {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .play-again-button {
+    margin-left: 15px;
+  }
+}
+
+
+    .choice-container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .player-choice {
+        align-items: center;
+    }
+
+    .house-picking-choice-container {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
